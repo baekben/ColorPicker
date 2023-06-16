@@ -7,6 +7,7 @@ const Color = ({ color, setSelectedColor }) => {
 
 const App = () => {
   const [selectedColor, setSelectedColor] = useState("");
+
   return (
     <div id="container">
       <div id="navbar">
@@ -14,9 +15,18 @@ const App = () => {
         <div className={selectedColor}>{selectedColor}</div>
       </div>
       <div id="colors-list">
-        <Color color="red" setSelectedColor={setSelectedColor} />
-        <Color color="green" setSelectedColor={setSelectedColor} />
-        <Color color="blue" setSelectedColor={setSelectedColor} />
+        <Color
+          color={selectedColor == "red" ? "red selected" : "red"}
+          setSelectedColor={setSelectedColor}
+        />
+        <Color
+          color={selectedColor == "green" ? "green selected" : "green"}
+          setSelectedColor={setSelectedColor}
+        />
+        <Color
+          color={selectedColor == "blue" ? "blue selected" : "blue"}
+          setSelectedColor={setSelectedColor}
+        />
       </div>
     </div>
   );
